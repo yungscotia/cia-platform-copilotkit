@@ -84,8 +84,8 @@ export class OpenAIAssistantAdapter implements CopilotServiceAdapter {
 
   constructor(params: OpenAIAssistantAdapterParams) {
     this.openai = params.openai || new OpenAI({});
-    this.codeInterpreterEnabled = params.codeInterpreterEnabled === false || true;
-    this.fileSearchEnabled = params.fileSearchEnabled === false || true;
+    this.codeInterpreterEnabled = params.codeInterpreterEnabled !== undefined ? params.codeInterpreterEnabled : true;
+    this.fileSearchEnabled = params.fileSearchEnabled !== undefined ? params.fileSearchEnabled : true;
     this.assistantId = params.assistantId;
     this.disableParallelToolCalls = params?.disableParallelToolCalls || false;
   }
@@ -222,7 +222,7 @@ export class OpenAIAssistantAdapter implements CopilotServiceAdapter {
     let stream = this.openai.beta.threads.runs.stream(threadId, {
       assistant_id: this.assistantId,
       instructions,
-      tools: tools,
+      ...(tools.length > 0 && { tools }),
       ...(forwardedParameters?.maxTokens && {
         max_completion_tokens: forwardedParameters.maxTokens,
       }),
