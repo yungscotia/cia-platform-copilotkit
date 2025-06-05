@@ -1,0 +1,44 @@
+# Directories
+assets/
+docs/
+examples/
+CopilotKit/
+community/
+infra/
+registry/
+sdk-python/
+
+# Large media files
+*.gif
+*.mp4
+*.png
+*.jpg
+*.jpeg
+
+# Development files
+.git/
+.github/
+.vscode/
+.husky/
+node_modules/
+.turbo/
+**/.next/
+**/__pycache__/
+**/.venv/
+
+# Misc
+.DS_Store
+*.pem
+__snapshots__
+@generated
+.idea/
+cdk_outputs.json
+test-run-comment.md
+*.egg-info/
+.installed.cfg
+*.egg
+**/.langgraph_api
+*.sqlite
+*.sqlite-shm
+*.sqlite-wal
+*.env
