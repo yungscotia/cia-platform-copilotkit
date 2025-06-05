@@ -1,5 +1,5 @@
 {
-  "name": "@netflix-internal/platform-copilotkit",
+  "name": "@netflix-internal/cia-platform-copilotkit",
   "version": "1.0.2",
   "description": "",
   "main": "index.js",
@@ -21,7 +21,7 @@
     "primaryBranch": "main",
     "releases": [
       {
-        "name": "@netflix-internal/platform-copilotkit"
+        "name": "@netflix-internal/cia-platform-copilotkit"
       }
     ]
   }
