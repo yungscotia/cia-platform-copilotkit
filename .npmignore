@@ -25,6 +25,9 @@ node_modules/
 **/__pycache__/
 **/.venv/
 
+# Explicitly include CopilotKit dist directories
+!CopilotKit/packages/*/dist/
+
 # Misc
 .DS_Store
 *.pem

@@ -3,10 +3,21 @@
   "version": "1.0.4",
   "description": "",
   "main": "index.js",
+  "exports": {
+    ".": "./index.js",
+    "./runtime": "./CopilotKit/packages/runtime/dist/index.js",
+    "./react-core": "./CopilotKit/packages/react-core/dist/index.js",
+    "./react-textarea": "./CopilotKit/packages/react-textarea/dist/index.js",
+    "./react-ui": "./CopilotKit/packages/react-ui/dist/index.js",
+    "./runtime-client-gql": "./CopilotKit/packages/runtime-client-gql/dist/index.js",
+    "./sdk-js": "./CopilotKit/packages/sdk-js/dist/index.js",
+    "./shared": "./CopilotKit/packages/shared/dist/index.js"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "prepare": "husky",
-    "release": "nflx-release"
+    "release": "nflx-release",
+    "build": "cd CopilotKit && pnpm build"
   },
   "keywords": [],
   "author": "",
