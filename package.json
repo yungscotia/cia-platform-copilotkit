@@ -5,13 +5,24 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "prepare": "husky"
+    "prepare": "husky",
+    "release": "nflx-release"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@netflix-internal/release": "^1.21.1",
     "danger": "^12.3.3",
     "husky": "^9.1.4"
+  },
+  "@netflix-internal/release": {
+    "packageManager": "npm",
+    "primaryBranch": "main",
+    "releases": [
+      {
+        "name": "CopilotKit"
+      }
+    ]
   }
 }
