@@ -42,8 +42,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "prepare": "husky",
     "release": "nflx-release",
-    "build": "cd CopilotKit && pnpm build && npm run bundle",
-    "bundle": "webpack",
+    "build": "cd CopilotKit && pnpm build && cd .. && npx webpack",
+    "bundle": "npx webpack",
     "prepublishOnly": "npm run build",
     "postinstall": "cd CopilotKit && pnpm install"
   },
