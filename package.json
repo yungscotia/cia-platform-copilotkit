@@ -1,6 +1,6 @@
 {
   "name": "@netflix-internal/cia-platform-copilotkit",
-  "version": "1.0.12",
+  "version": "1.0.13",
   "description": "test description",
   "type": "commonjs",
   "main": "dist/index.bundle.js",
