@@ -13,12 +13,30 @@
       "import": "./runtime.js",
       "require": "./runtime.js"
     },
-    "./react-core": "./CopilotKit/packages/react-core/dist/index.js",
-    "./react-textarea": "./CopilotKit/packages/react-textarea/dist/index.js",
-    "./react-ui": "./CopilotKit/packages/react-ui/dist/index.js",
-    "./runtime-client-gql": "./CopilotKit/packages/runtime-client-gql/dist/index.js",
-    "./sdk-js": "./CopilotKit/packages/sdk-js/dist/index.js",
-    "./shared": "./CopilotKit/packages/shared/dist/index.js"
+    "./react-core": {
+      "import": "./react-core.js",
+      "require": "./react-core.js"
+    },
+    "./react-textarea": {
+      "import": "./react-textarea.js",
+      "require": "./react-textarea.js"
+    },
+    "./react-ui": {
+      "import": "./react-ui.js",
+      "require": "./react-ui.js"
+    },
+    "./runtime-client-gql": {
+      "import": "./runtime-client-gql.js",
+      "require": "./runtime-client-gql.js"
+    },
+    "./sdk-js": {
+      "import": "./sdk-js.js",
+      "require": "./sdk-js.js"
+    },
+    "./shared": {
+      "import": "./shared.js",
+      "require": "./shared.js"
+    }
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
