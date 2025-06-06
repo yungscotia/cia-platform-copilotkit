@@ -1,51 +1,31 @@
 {
   "name": "@netflix-internal/cia-platform-copilotkit",
-  "version": "1.0.13",
-  "description": "test description",
-  "type": "commonjs",
-  "main": "dist/index.bundle.js",
+  "version": "1.0.6",
+  "description": "Netflix internal package for CopilotKit functionality",
+  "main": "index.js",
+  "module": "index.mjs",
   "exports": {
     ".": {
-      "require": "./dist/index.bundle.js",
-      "import": "./dist/index.bundle.js"
+      "import": "./index.mjs",
+      "require": "./index.js"
     },
     "./runtime": {
-      "require": "./dist/runtime.bundle.js",
-      "import": "./dist/runtime.bundle.js"
+      "import": "./runtime.js",
+      "require": "./runtime.js"
     },
-    "./react-core": {
-      "require": "./dist/react-core.bundle.js",
-      "import": "./dist/react-core.bundle.js"
-    },
-    "./react-textarea": {
-      "require": "./dist/react-textarea.bundle.js",
-      "import": "./dist/react-textarea.bundle.js"
-    },
-    "./react-ui": {
-      "require": "./dist/react-ui.bundle.js",
-      "import": "./dist/react-ui.bundle.js"
-    },
-    "./runtime-client-gql": {
-      "require": "./dist/runtime-client-gql.bundle.js",
-      "import": "./dist/runtime-client-gql.bundle.js"
-    },
-    "./sdk-js": {
-      "require": "./dist/sdk-js.bundle.js",
-      "import": "./dist/sdk-js.bundle.js"
-    },
-    "./shared": {
-      "require": "./dist/shared.bundle.js",
-      "import": "./dist/shared.bundle.js"
-    }
+    "./react-core": "./CopilotKit/packages/react-core/dist/index.js",
+    "./react-textarea": "./CopilotKit/packages/react-textarea/dist/index.js",
+    "./react-ui": "./CopilotKit/packages/react-ui/dist/index.js",
+    "./runtime-client-gql": "./CopilotKit/packages/runtime-client-gql/dist/index.js",
+    "./sdk-js": "./CopilotKit/packages/sdk-js/dist/index.js",
+    "./shared": "./CopilotKit/packages/shared/dist/index.js"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "prepare": "husky",
     "release": "nflx-release",
-    "build": "cd CopilotKit && pnpm build && cd .. && npx webpack",
-    "bundle": "npx webpack",
-    "prepublishOnly": "npm run build",
-    "postinstall": "cd CopilotKit && pnpm install"
+    "build": "cd CopilotKit && pnpm build",
+    "verify": "node verify-build.js"
   },
   "keywords": [],
   "author": "",
