@@ -1,17 +1,42 @@
 {
   "name": "@netflix-internal/cia-platform-copilotkit",
-  "version": "1.0.10",
+  "version": "1.0.9",
   "description": "test description",
+  "type": "commonjs",
   "main": "index.js",
   "exports": {
-    ".": "./index.js",
-    "./runtime": "./CopilotKit/packages/runtime/dist/index.js",
-    "./react-core": "./CopilotKit/packages/react-core/dist/index.js",
-    "./react-textarea": "./CopilotKit/packages/react-textarea/dist/index.js",
-    "./react-ui": "./CopilotKit/packages/react-ui/dist/index.js",
-    "./runtime-client-gql": "./CopilotKit/packages/runtime-client-gql/dist/index.js",
-    "./sdk-js": "./CopilotKit/packages/sdk-js/dist/index.js",
-    "./shared": "./CopilotKit/packages/shared/dist/index.js"
+    ".": {
+      "require": "./index.js",
+      "import": "./index.js"
+    },
+    "./runtime": {
+      "require": "./CopilotKit/packages/runtime/dist/index.js",
+      "import": "./CopilotKit/packages/runtime/dist/index.js"
+    },
+    "./react-core": {
+      "require": "./CopilotKit/packages/react-core/dist/index.js",
+      "import": "./CopilotKit/packages/react-core/dist/index.js"
+    },
+    "./react-textarea": {
+      "require": "./CopilotKit/packages/react-textarea/dist/index.js",
+      "import": "./CopilotKit/packages/react-textarea/dist/index.js"
+    },
+    "./react-ui": {
+      "require": "./CopilotKit/packages/react-ui/dist/index.js",
+      "import": "./CopilotKit/packages/react-ui/dist/index.js"
+    },
+    "./runtime-client-gql": {
+      "require": "./CopilotKit/packages/runtime-client-gql/dist/index.js",
+      "import": "./CopilotKit/packages/runtime-client-gql/dist/index.js"
+    },
+    "./sdk-js": {
+      "require": "./CopilotKit/packages/sdk-js/dist/index.js",
+      "import": "./CopilotKit/packages/sdk-js/dist/index.js"
+    },
+    "./shared": {
+      "require": "./CopilotKit/packages/shared/dist/index.js",
+      "import": "./CopilotKit/packages/shared/dist/index.js"
+    }
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
