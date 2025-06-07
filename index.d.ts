@@ -11,7 +11,7 @@ export declare const runtime: typeof RuntimeTypes;
 // Export the runtime types as the default export
 declare const _default: {
   runtime: typeof RuntimeTypes;
-};
+} & typeof RuntimeTypes;
 
 export default _default;
 
