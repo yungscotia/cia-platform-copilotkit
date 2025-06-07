@@ -20,7 +20,7 @@ try {
   const packageJson = require('./package.json');
   
   // Check required fields
-  const requiredFields = ['name', 'version', 'main', 'exports'];
+  const requiredFields = ['name', 'version', 'main', 'exports', 'imports'];
   const missingFields = requiredFields.filter(field => !packageJson[field]);
   
   if (missingFields.length > 0) {
@@ -29,6 +29,26 @@ try {
   }
   
   console.log('✅ package.json has all required fields');
+  
+  // Check if imports field has all the required aliases
+  const requiredAliases = [
+    '@copilotkit/runtime',
+    '@copilotkit/react-core',
+    '@copilotkit/react-textarea',
+    '@copilotkit/react-ui',
+    '@copilotkit/runtime-client-gql',
+    '@copilotkit/sdk-js',
+    '@copilotkit/shared'
+  ];
+  
+  const missingAliases = requiredAliases.filter(alias => !packageJson.imports[alias]);
+  
+  if (missingAliases.length > 0) {
+    console.error(`❌ package.json is missing import aliases: ${missingAliases.join(', ')}`);
+    process.exit(1);
+  }
+  
+  console.log('✅ All required import aliases are defined in package.json');
   
   // Check if the package name is correct
   if (packageJson.name !== '@netflix-internal/cia-platform-copilotkit') {

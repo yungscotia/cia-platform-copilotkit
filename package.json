@@ -42,8 +42,9 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "prepare": "husky",
     "release": "nflx-release",
-    "build": "cd CopilotKit && pnpm build",
-    "verify": "node verify-build.js"
+    "build": "cd CopilotKit && pnpm build && node alias-resolver.js",
+    "verify": "node verify-build.js",
+    "update-aliases": "node alias-resolver.js"
   },
   "keywords": [],
   "author": "",
@@ -133,5 +134,35 @@
         "name": "@netflix-internal/cia-platform-copilotkit"
       }
     ]
+  },
+  "imports": {
+    "@copilotkit/runtime": {
+      "import": "./runtime.js",
+      "require": "./runtime.js"
+    },
+    "@copilotkit/react-core": {
+      "import": "./react-core.js",
+      "require": "./react-core.js"
+    },
+    "@copilotkit/react-textarea": {
+      "import": "./react-textarea.js",
+      "require": "./react-textarea.js"
+    },
+    "@copilotkit/react-ui": {
+      "import": "./react-ui.js",
+      "require": "./react-ui.js"
+    },
+    "@copilotkit/runtime-client-gql": {
+      "import": "./runtime-client-gql.js",
+      "require": "./runtime-client-gql.js"
+    },
+    "@copilotkit/sdk-js": {
+      "import": "./sdk-js.js",
+      "require": "./sdk-js.js"
+    },
+    "@copilotkit/shared": {
+      "import": "./shared.js",
+      "require": "./shared.js"
+    }
   }
 }
