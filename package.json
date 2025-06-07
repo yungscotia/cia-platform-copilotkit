@@ -1,6 +1,6 @@
 {
   "name": "@netflix-internal/cia-platform-copilotkit",
-  "version": "1.1.4",
+  "version": "1.1.5",
   "description": "Netflix internal package for CopilotKit functionality",
   "main": "index.js",
   "module": "index.mjs",
