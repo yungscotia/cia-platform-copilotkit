@@ -70,7 +70,9 @@ try {
   
   // Check if wrapper files exist
   const wrapperFiles = [
-    'runtime.js'
+    'runtime.js',
+    'runtime.d.ts',
+    'index.d.ts'
   ];
   
   const missingWrappers = wrapperFiles.filter(file => !fs.existsSync(`./${file}`));

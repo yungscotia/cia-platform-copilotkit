@@ -1,17 +1,20 @@
 {
   "name": "@netflix-internal/cia-platform-copilotkit",
-  "version": "1.1.5",
+  "version": "1.1.4",
   "description": "Netflix internal package for CopilotKit functionality",
   "main": "index.js",
   "module": "index.mjs",
+  "types": "index.d.ts",
   "exports": {
     ".": {
       "import": "./index.mjs",
-      "require": "./index.js"
+      "require": "./index.js",
+      "types": "./index.d.ts"
     },
     "./runtime": {
       "import": "./runtime.js",
-      "require": "./runtime.js"
+      "require": "./runtime.js",
+      "types": "./runtime.d.ts"
     }
   },
   "scripts": {
