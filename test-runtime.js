@@ -1,34 +1,38 @@
 /**
  * Test script for the runtime package
- * This script tests both CommonJS and ES Module imports
+ * This script tests both CommonJS and dynamic imports for the runtime package
  */
 
 console.log('Testing runtime package imports...');
 
 // Test CommonJS import
+console.log('\n--- Testing CommonJS import ---');
 try {
-  console.log('\n--- Testing CommonJS import ---');
-  const runtime = require('./runtime');
-  console.log('✅ CommonJS import successful');
-  console.log('Runtime module keys:', Object.keys(runtime));
+  const { runtime } = require('./index.js');
+  console.log('✅ CommonJS import successful for runtime');
+  console.log('Runtime module keys:', Object.keys(runtime).length);
 } catch (error) {
-  console.error('❌ CommonJS import failed:', error.message);
+  console.error('❌ CommonJS import failed for runtime:', error.message);
 }
 
-// Test dynamic import (works in both CommonJS and ES Module environments)
-console.log('\n--- Testing dynamic import ---');
-import('./runtime.js')
-  .then(module => {
-    console.log('✅ Dynamic import successful');
-    console.log('Runtime module keys:', Object.keys(module));
-    
-    // Test the default export function
-    return module.default();
-  })
-  .then(runtimeModule => {
-    console.log('✅ Default export function returned:', typeof runtimeModule);
-    console.log('Runtime module keys from default function:', Object.keys(runtimeModule));
-  })
-  .catch(error => {
-    console.error('❌ Dynamic import failed:', error.message);
-  });
+// Test direct import
+console.log('\n--- Testing direct import ---');
+try {
+  const runtime = require('./runtime.js');
+  console.log('✅ Direct import successful for runtime');
+  console.log('Runtime module keys:', Object.keys(runtime).length);
+} catch (error) {
+  console.error('❌ Direct import failed for runtime:', error.message);
+}
+
+// Test @copilotkit/runtime import
+console.log('\n--- Testing @copilotkit/runtime import ---');
+try {
+  const runtime = require('@copilotkit/runtime');
+  console.log('✅ @copilotkit/runtime import successful');
+  console.log('Runtime module keys:', Object.keys(runtime).length);
+} catch (error) {
+  console.error('❌ @copilotkit/runtime import failed:', error.message);
+}
+
+console.log('\nAll runtime package tests completed.');

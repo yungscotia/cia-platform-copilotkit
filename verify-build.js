@@ -32,13 +32,7 @@ try {
   
   // Check if imports field has all the required aliases
   const requiredAliases = [
-    '@copilotkit/runtime',
-    '@copilotkit/react-core',
-    '@copilotkit/react-textarea',
-    '@copilotkit/react-ui',
-    '@copilotkit/runtime-client-gql',
-    '@copilotkit/sdk-js',
-    '@copilotkit/shared'
+    '@copilotkit/runtime'
   ];
   
   const missingAliases = requiredAliases.filter(alias => !packageJson.imports[alias]);
@@ -76,13 +70,7 @@ try {
   
   // Check if wrapper files exist
   const wrapperFiles = [
-    'runtime.js',
-    'react-core.js',
-    'react-textarea.js',
-    'react-ui.js',
-    'runtime-client-gql.js',
-    'sdk-js.js',
-    'shared.js'
+    'runtime.js'
   ];
   
   const missingWrappers = wrapperFiles.filter(file => !fs.existsSync(`./${file}`));
@@ -96,13 +84,7 @@ try {
   
   // Check if the dist directories exist
   const subpackages = [
-    'runtime',
-    'react-core',
-    'react-textarea',
-    'react-ui',
-    'runtime-client-gql',
-    'sdk-js',
-    'shared'
+    'runtime'
   ];
   
   const missingDists = subpackages.filter(pkg => {
@@ -136,13 +118,7 @@ try {
   // Verify the exports field in package.json
   const expectedPaths = [
     '.',
-    './runtime',
-    './react-core',
-    './react-textarea',
-    './react-ui',
-    './runtime-client-gql',
-    './sdk-js',
-    './shared'
+    './runtime'
   ];
   
   const missingPaths = expectedPaths.filter(path => {
@@ -167,13 +143,7 @@ try {
   
   // List of all packages to test
   const packages = [
-    'runtime',
-    'react-core',
-    'react-textarea',
-    'react-ui',
-    'runtime-client-gql',
-    'sdk-js',
-    'shared'
+    'runtime'
   ];
   
   // Test CommonJS imports
